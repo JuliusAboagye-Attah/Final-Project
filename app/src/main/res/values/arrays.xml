@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="regions_list_for_settings">
+     <item>Google.MAP_TYPE_SATELLITE</item>
+     <item>Google.MAP_TYPE_NORMAL</item>
+    </string-array>
+</resources>

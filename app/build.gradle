@@ -3,9 +3,10 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.0"
+    useLibrary 'org.apache.http.legacy'
     defaultConfig {
         applicationId "youtube.demo.youtubedemo"
-        minSdkVersion 17
+        minSdkVersion 23
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
@@ -30,4 +31,5 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:design:23.1.0'
     compile 'com.google.android.gms:play-services:8.4.0'
+    compile 'com.mcxiaoke.volley:library:1.0.19'
 }
