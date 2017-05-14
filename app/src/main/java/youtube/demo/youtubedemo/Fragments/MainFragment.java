@@ -50,6 +50,10 @@ public class MainFragment extends Fragment {
     private Button sendBtn;
     ProgressDialog progressDialog;
     RequestQueue requestQueue;
+    private TrackGPS gps;
+    double longitude;
+    double latitude;
+
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -105,6 +109,25 @@ public class MainFragment extends Fragment {
                 startActivity(intent);
             }
         });//This place ends the codes
+
+
+        gps = new TrackGPS(MainFragment.this.getContext());
+
+
+        if(gps.canGetLocation()){
+
+
+            longitude = gps.getLongitude();
+            latitude = gps .getLatitude();
+
+            Toast.makeText(MainFragment.this.getContext(),"Longitude:"+Double.toString(longitude)+"\nLatitude:"+Double.toString(latitude),Toast.LENGTH_LONG).show();
+        }
+        else
+        {
+
+            gps.showSettingsAlert();
+        }
+
 
     }
 

@@ -101,6 +101,7 @@ public class MainActivity extends AppCompatActivity
         if (id == R.id.nav_camara) {
             fm.beginTransaction().replace(R.id.content_frame, new ImportFragment()).commit();
         } else if (id == R.id.nav_gallery) {
+
             fm.beginTransaction().replace(R.id.content_frame, new GmapFragment()).commit();
         } else if (id == R.id.nav_slideshow) {
             fm.beginTransaction().replace(R.id.content_frame, new MainFragment()).commit();
