@@ -7,22 +7,23 @@ import android.app.Fragment;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.renderscript.Double2;
 import android.support.v4.app.ActivityCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
-import com.google.android.gms.fitness.data.Value;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import youtube.demo.youtubedemo.R;
+
+import com.google.android.gms.maps.UiSettings.*;
 
 
 public class GmapFragment extends Fragment implements OnMapReadyCallback {
@@ -43,11 +44,11 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
 
         MapFragment fragment = (MapFragment) getChildFragmentManager().findFragmentById(R.id.map);
         fragment.getMapAsync(this);
-
+        trackGPS.onLocationChanged(trackGPS.loc);
         trackGPS.canGetLocation();
         trackGPS.getLat1();
         trackGPS.getLong1();
-        trackGPS.onLocationChanged(trackGPS.loc);
+
 
     }
 
@@ -68,8 +69,10 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
             return;
         }
         googleMap.setMyLocationEnabled(true);
-
-
+        googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
+        googleMap.getUiSettings();
+       googleMap.getUiSettings().setAllGesturesEnabled(true);
+        googleMap.getUiSettings().setMapToolbarEnabled(true);
 
     }
 
