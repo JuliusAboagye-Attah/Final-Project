@@ -71,7 +71,7 @@ public class GmapFragment extends Fragment implements OnMapReadyCallback {
         googleMap.setMyLocationEnabled(true);
         googleMap.setMapType(GoogleMap.MAP_TYPE_SATELLITE);
         googleMap.getUiSettings();
-       googleMap.getUiSettings().setAllGesturesEnabled(true);
+        googleMap.getUiSettings().setAllGesturesEnabled(true);
         googleMap.getUiSettings().setMapToolbarEnabled(true);
 
     }
